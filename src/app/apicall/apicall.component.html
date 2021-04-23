@@ -1,0 +1,37 @@
+
+<br>
+<app-header></app-header>
+<br>
+<div class="container">
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>Exchange</th>
+                <th>Shortname</th>
+                <th>QuoteType</th>
+                <th>Symbol</th>
+                <th>Index</th>
+                <th>Score</th>
+                <th>TypeDisp</th>
+                <th>Longname</th>
+                <th>IsYahooFinance</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let q of quotess">
+                <td><span>{{q.exchange}}</span></td>
+                <td><span>{{q.shortname}}</span></td>
+                <td><span>{{q.quoteType}}</span></td>
+                <td><span>{{q.symbol}}</span></td>
+                <td><span>{{q.index}}</span></td>
+                <td><span>{{q.score}}</span></td>
+                <td><span>{{q.typeDisp}}</span></td>
+                <td><span>{{q.longname}}</span></td>
+                <td><span>{{q.isYahooFinance}}</span></td>
+               
+            </tr>
+
+        </tbody>
+    </table>
+</div>
+<app-footer></app-footer>
