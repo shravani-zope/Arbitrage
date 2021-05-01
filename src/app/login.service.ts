@@ -35,10 +35,10 @@ export class LoginService {
     // head.append('useQueryString',"true"  );
 
     return this._http.post("http://localhost:8090/Login",user);
-    
+
 
   }
-  
+
 
 
 // HTTP POST using these headers

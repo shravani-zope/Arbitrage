@@ -1,8 +1,6 @@
-
-<br>
 <app-header></app-header>
 <br>
-<div class="container">
+<!--div class="container">
     <table class="table table-bordered table-striped">
         <thead>
             <tr>
@@ -28,10 +26,43 @@
                 <td><span>{{q.typeDisp}}</span></td>
                 <td><span>{{q.longname}}</span></td>
                 <td><span>{{q.isYahooFinance}}</span></td>
-               
+
             </tr>
 
         </tbody>
     </table>
+</div-->
+<div class="table-wrapper-scroll-y my-custom-scrollbar table-responsive" >
+  <table class="table table-bordered table-striped table-hover">
+    <thead>
+
+      <th>symbol name</th>
+      <th>Quote Type</th>
+      <th>NSE Price</th>
+      <th>BSE price</th>
+      <th>Profit</th>
+      <th>BUY</th>
+      <th>SAVE</th>
+
+    </thead>
+    <tbody>
+
+
+
+      <tr *ngFor="let i of counter">
+        <td><span>{{symbolname[i]}}</span></td>
+        <td><span>{{QuoteResponse[i].quoteType}}</span></td>
+        <td><span>{{nsePrice[i]}}</span></td>
+        <td><span>{{bsePrice[i]}}</span></td>
+        <td><span>{{profitarray[i]}}</span></td>
+        <td><span>{{buy[i]}}</span></td>
+        <td><span><button type="submit" class="btn btn-outline-primary btn-block">SAVE</button></span></td>
+      </tr>
+
+
+    </tbody>
+  </table>
+
+
 </div>
 <app-footer></app-footer>

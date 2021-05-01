@@ -1,17 +1,41 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { NumberFormatStyle } from '@angular/common';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
+import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+
+
+import { from, Observable } from 'rxjs';
+import { ApicallComponent } from './apicall/apicall.component';
 import { Users } from './login/login.model';
-export class Autocomplete{
+
+export class niftyfifty{
   constructor(
-    public quotes
+
+   public stocks:string[],
+
   ){}
 }
+export class quoteresponse{
+  constructor(
+    public longName:string,
+    public quoteType:string,
+    //public result:string[]
+    public regularMarketPrice:number,
+    public fullExchangeName:string,
+
+  ){}
+}
+
+
 @Injectable({
   providedIn: 'root'
 })
 export class ApicallService {
-  
+  NiftyFifty:niftyfifty[];
+  QuoteResponse:quoteresponse[];
+  myString: string;
+
+
   constructor(private _http :HttpClient) { }
 
   // public getnumber()
@@ -19,17 +43,48 @@ export class ApicallService {
   //     return 1;
   //   };
 
-  public apicallsuccess():Observable<any>{
+
+    public apicallsuccess(myString:string):Observable<any>{
     let httpHeaders=new HttpHeaders({
       'Access-Control-Allow-Origin':'*',
       'Content-Type':'application/json',
     });
-    
-    httpHeaders=httpHeaders.append('x-rapidapi-key','34cbc3a367msh3842a0ab665bfd1p164498jsne3f9d7f77d85');
-    httpHeaders=httpHeaders.append('x-rapidapi-host', 'apidojo-yahoo-finance-v1.p.rapidapi.com');
-    return this._http.get("https://apidojo-yahoo-finance-v1.p.rapidapi.com/auto-complete?q=tesla&region=US",{headers:httpHeaders});
 
-  }
+    //console.log(myString)
+    let para = new HttpParams();
+    para=para.append('region', "IN")
+    para=para.set('symbols',myString)
 
-  
+    httpHeaders=httpHeaders.append('x-rapidapi-key','bd38e734e4msh63636610acf652ep18811cjsn4ae13eafeb07');
+    httpHeaders=httpHeaders.append('x-rapidapi-host', 'apidojo-yahoo-finance-v1.p.rapidapi.com')
+
+    return this._http.get("https://apidojo-yahoo-finance-v1.p.rapidapi.com/market/v2/get-quotes",{headers:httpHeaders,params:para});
+
+   }
+
+
+
+
+    public getniftyfifty():Observable<any>{
+    let httpHeaders=new HttpHeaders({
+      'Access-Control-Allow-Origin':'*',
+      'Content-Type':'application/json',
+    });
+    httpHeaders=httpHeaders.append('x-rapidapi-key','bd38e734e4msh63636610acf652ep18811cjsn4ae13eafeb07');
+    httpHeaders=httpHeaders.append('x-rapidapi-host', 'stock-market-data.p.rapidapi.com');
+
+
+    return this._http.get("https://stock-market-data.p.rapidapi.com/market/index/nifty-fifty",{headers:httpHeaders});
+  };
+
+
+
+
+
+
+
+
+
+
+
 }
