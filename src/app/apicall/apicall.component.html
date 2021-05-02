@@ -43,6 +43,7 @@
       <th>Profit</th>
       <th>BUY</th>
       <th>SAVE</th>
+      <th>Quantity</th>
 
     </thead>
     <tbody>
@@ -56,7 +57,14 @@
         <td><span>{{bsePrice[i]}}</span></td>
         <td><span>{{profitarray[i]}}</span></td>
         <td><span>{{buy[i]}}</span></td>
-        <td><span><button type="submit" class="btn btn-outline-primary btn-block">SAVE</button></span></td>
+        <td><span><button type="button" class="btn btn-outline-primary btn-block" (click)="plus()">
+        <i class="fa fa-plus"></i>SAVE</button></span></td>
+        <!-- <td><span><button type="button" (click)="minus()"><i class="fa fa-minus"></i></button></span></td> -->
+        <input type="text" class="form-control mr-sm-2" [value]="quantity">
+
+        <td><span><button type="button" class="btn btn-outline-primary btn-block" (click)="reset()">
+        <i class=""></i>RESET</button></span></td>
+
       </tr>
 
 
