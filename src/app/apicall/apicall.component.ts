@@ -178,30 +178,7 @@ export class ApicallComponent implements OnInit {
 
 
       }
-      quantity:number=1;
-      i=1
-      plus(){
-        if(this.i !=100000)
-        {
-          this.i++;
-          this.quantity=this.i;
-        }
-      }
-      reset(){
-        if(this.i !=0)
-        {
-          this.i=0;
-          this.quantity=this.i;
-        }
-      }
-
-
-
-
-
-
-
-
+      
   }
 
 

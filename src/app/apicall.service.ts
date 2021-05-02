@@ -55,7 +55,7 @@ export class ApicallService {
     para=para.append('region', "IN")
     para=para.set('symbols',myString)
 
-    httpHeaders=httpHeaders.append('x-rapidapi-key','bd38e734e4msh63636610acf652ep18811cjsn4ae13eafeb07');
+    httpHeaders=httpHeaders.append('x-rapidapi-key','794fbb4305msh68abb39ab877827p17519ajsn9c3705bd0dcf');
     httpHeaders=httpHeaders.append('x-rapidapi-host', 'apidojo-yahoo-finance-v1.p.rapidapi.com')
 
     return this._http.get("https://apidojo-yahoo-finance-v1.p.rapidapi.com/market/v2/get-quotes",{headers:httpHeaders,params:para});
@@ -70,7 +70,7 @@ export class ApicallService {
       'Access-Control-Allow-Origin':'*',
       'Content-Type':'application/json',
     });
-    httpHeaders=httpHeaders.append('x-rapidapi-key','bd38e734e4msh63636610acf652ep18811cjsn4ae13eafeb07');
+    httpHeaders=httpHeaders.append('x-rapidapi-key','794fbb4305msh68abb39ab877827p17519ajsn9c3705bd0dcf');
     httpHeaders=httpHeaders.append('x-rapidapi-host', 'stock-market-data.p.rapidapi.com');
 
 

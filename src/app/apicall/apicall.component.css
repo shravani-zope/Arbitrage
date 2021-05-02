@@ -1,3 +1,6 @@
 .table-responsive{
-  max-height: 500px;
+  max-height: 600px;
+}
+.page-wrapper{
+  min-height: 100%;
 }

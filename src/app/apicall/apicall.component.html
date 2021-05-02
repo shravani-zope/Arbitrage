@@ -32,7 +32,7 @@
         </tbody>
     </table>
 </div-->
-<div class="table-wrapper-scroll-y my-custom-scrollbar table-responsive" >
+<div class="table-wrapper-scroll-y my-custom-scrollbar table-responsive page-wrapper" >
   <table class="table table-bordered table-striped table-hover">
     <thead>
 
@@ -42,8 +42,8 @@
       <th>BSE price</th>
       <th>Profit</th>
       <th>BUY</th>
-      <th>SAVE</th>
       <th>Quantity</th>
+      <th>SAVE</th>
 
     </thead>
     <tbody>
@@ -57,13 +57,10 @@
         <td><span>{{bsePrice[i]}}</span></td>
         <td><span>{{profitarray[i]}}</span></td>
         <td><span>{{buy[i]}}</span></td>
-        <td><span><button type="button" class="btn btn-outline-primary btn-block" (click)="plus()">
-        <i class="fa fa-plus"></i>SAVE</button></span></td>
-        <!-- <td><span><button type="button" (click)="minus()"><i class="fa fa-minus"></i></button></span></td> -->
-        <input type="text" class="form-control mr-sm-2" [value]="quantity">
 
-        <td><span><button type="button" class="btn btn-outline-primary btn-block" (click)="reset()">
-        <i class=""></i>RESET</button></span></td>
+        <!-- <td><span><button type="button" (click)="minus()"><i class="fa fa-minus"></i></button></span></td> -->
+        <input type="number" min="0" class="form-control mr-sm-5">
+        <td><span><button type="button" class="btn btn-outline-primary btn-block" onclick="">SAVE</button></span></td>
 
       </tr>
 
